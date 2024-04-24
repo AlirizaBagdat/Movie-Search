@@ -42,4 +42,4 @@ const signupPage = () => {
     );
 };
 
-export default signupPage;
+export default SignupPage;
