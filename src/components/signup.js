@@ -39,5 +39,7 @@ const signupPage = () => {
                 <Button variant="primary" onClick={handleSignup}> Signup </Button>
             </Form>
         </div>
-    )
-}
+    );
+};
+
+export default signupPage;
