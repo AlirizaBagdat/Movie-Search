@@ -1,26 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './components/loginPage';
 import SignupPage from './components/signup';
 import SearchPage from './components/search';
-import PrivateRoute from './components/privateRoute';
-
 
 function App() {
-  const [count, setCount] = useState(0)
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
 
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route path="/login" component={LoginPage} />
-          <Route path="/signup" component={SignupPage} />
-          <PrivateRoute path="/search" component={SearchPage} />
-          <Route exact path="/" component={LoginPage} />
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/search" element={isLoggedIn ? <SearchPage /> : <Navigate to="/login" />} />
+        <Route path="/" element={<LoginPage />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App
+export default App;
+
+

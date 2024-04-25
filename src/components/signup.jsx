@@ -1,16 +1,22 @@
 import React, {useState} from "react";
 import {Form, Button } from 'react-bootstrap';
+import { Navigate } from 'react-router-dom';
 
-const signupPage = () => {
+const SignupPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [signedUp, setSignedUp] = useState(false);
+
 
     const handleSignup = () => {
         localStorage.setItem('username', username);
         localStorage.setItem('password', password);
-
-        window.location.href = '/login';
+        setSignedUp(true);
+        
     };
+    if (signedUp) {
+        return <Navigate to={'/login'}/>
+    }
 
     return (
         <div> 
