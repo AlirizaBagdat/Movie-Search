@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import MovieItem from './MovieItem';
+import MovieItem from '../MovieItem';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const SearchPage = () => {
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
+   
 
     const handleSearch = async () => {
     try {
-      const apiKey = process.env.REACT_APP_API_KEY;
+      const apiKey = '1cece4418167d7edc50a16dc5aef363a';
+      
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`
       );

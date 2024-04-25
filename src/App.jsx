@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import LoginPage from './components/loginPage';
-import SignupPage from './components/signup';
-import SearchPage from './components/search';
+import LoginPage from './components/LoginPage/loginPage';
+import SignupPage from './components/SignUp/signup';
+import SearchPage from './components/Search/search';
 
 function App() {
   const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
