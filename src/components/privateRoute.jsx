@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Route, Redirect} from 'react-router-dom';
+import {Route, Navigate} from 'react-router-dom';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
     const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
@@ -7,7 +7,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         <Route
         {...rest}
         render={(props) => 
-        isLoggedIn ? <Component {...props} /> : <Redirect to="/login" />
+        isLoggedIn ? <Component {...props} /> : <Navigate to="/login" />
         }
         />
     
