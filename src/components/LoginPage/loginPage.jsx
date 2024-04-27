@@ -24,6 +24,10 @@ const LoginPage = () => {
     const handleLogin = () => {
         const storedUsername = localStorage.getItem('username');
         const storedPassword = localStorage.getItem('password');
+        console.log('Entered Username:', username);
+        console.log('Stored Username:', storedUsername);
+        console.log('Entered Password:', password);
+        console.log('Stored Password:', storedPassword);
 
         if (username === storedUsername && password === storedPassword) {
             localStorage.setItem('loggedIn', 'true');

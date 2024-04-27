@@ -1,0 +1,27 @@
+.movie-item  {
+    
+    background-color: #99a7f4; /* Background color for each movie box */
+    
+    border-radius: 8px; /* Border radius to make the box rounded */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+    overflow: hidden; /* Prevent overflowing content from being displayed */
+    
+    border-style: solid;
+}
+
+.movie-item img {
+    max-width: 100%; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper layout */
+    border-radius: 5px;
+}
+
+.title:link{
+    text-decoration: none;
+    left: 50%;
+}
+
+.title:hover {
+    color: red;
+    font-weight: bolder;
+}
