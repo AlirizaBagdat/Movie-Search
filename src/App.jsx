@@ -6,7 +6,7 @@ import SearchPage from './components/Search/search';
 import MovieDetails from './components/movieDetails';
 import NavBar from './components/Search/navbar';
 import 'normalize.css';   
-import './app.css';
+// import './app.css';
 
 function App() {
   const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
